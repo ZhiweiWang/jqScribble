@@ -36,6 +36,8 @@ function jqScribbleBrush()
 	jqScribbleBrush.prototype.strokeBegin = function(x, y)
 	{
 		this.active = true;
+        this.context.lineJoin = "round";
+        this.context.lineCap = "round";
 		this.context.beginPath();
 		this.context.lineWidth = this.brushSize;
 	};
@@ -102,7 +104,7 @@ function BasicCanvasSave(imageData){window.open(imageData,'jqScribble Image');}
 		brush:				BasicBrush,
 		brushSize:			2,
 		brushColor:			"rgb(0,0,0)",
-    fillOnClear: true
+        fillOnClear:        true
 	};
 	
 	function addImage(context)
